@@ -1,0 +1,243 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #66FCF1;
+  --secondary-color: #45A29E;
+  --tertiary-color: #1F2833;
+  --dark-color: #0B0C10;
+  --light-color: #C5C6C7;
+  --max-width: 1300px;
+  --main-font: 'Anton', sans-serif;
+}
+
+body {
+  font-family: var(--main-font);
+  font-size: 16px;
+}
+
+h1 {
+  color: var(--light-color);
+  font-size: 4.5em;
+}
+
+h3 {
+  color: var(--primary-color);
+  font-size: 2.0em;
+  font-style: italic;
+}
+
+/* Header */
+header {
+  background: var(--tertiary-color);
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 70px;
+}
+
+#navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+#navbar ul li {
+ padding: 20px;
+}
+
+#navbar ul li:hover {
+  background: var(--secondary-color);
+}
+
+#navbar ul li:hover a {
+  color: var(--dark-color);
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 1.3em;
+}
+
+/* Welcome Section */
+#welcome-section {
+  background-color: var(--dark-color);
+  height: 100vh;
+}
+
+#welcome-section .welcome-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Projects Section */
+#projects {
+  height: calc(100vh - 70px);
+  background-color: var(--secondary-color);
+}
+
+#projects .project-title {
+  width: 100%;
+}
+
+#projects .project-title h1 {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 2.0em;
+  color: var(--dark-color);
+}
+
+#projects .line {
+  width: 45%;
+  border: 1px solid var(--dark-color);
+  margin: 10px auto 40px auto;
+}
+
+#projects .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+#projects .container .project-tile a {
+  display: grid;
+  grid-template-rows: 9.5fr 1.5fr;
+  height: 500px;
+  justify-content: center;
+  background-color: #fff;
+  text-decoration: none;
+}
+
+#projects .container .project-tile img {
+  width: 100%;
+  height: 100%;
+}
+
+#projects .container .project-tile .project-tile-text{
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  background-color: #1F2833;
+}
+
+#projects .container .project-tile .project-tile-text p{
+  color:var(--light-color);
+  text-decoration: none;
+  font-size: 1.4em;
+}
+
+#projects .container .project-tile .project-tile-text span {
+  visibility: hidden;
+  color: var(--secondary-color);
+  padding: 0 5px;
+}
+
+#projects .container .project-tile a:hover .project-tile-text span {
+  visibility: visible;
+}
+
+.btn-link{
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 28px auto 28px auto;
+}
+.btn {
+  background-color: var(--tertiary-color);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+}
+
+/* Section: Contact */
+#contact {
+  height: calc(100vh - 70px - 35px);
+  background-color: var(--dark-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact .social {
+margin-top: 40px;
+}
+
+#contact .social a{
+  text-decoration: none;
+  padding: 0 20px;
+  text-align: center;
+  justify-content: center;
+  color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.3em;
+}
+
+#contact .social a i{
+  padding: 20px;
+}
+
+/* Footer */
+#footer {
+  height: 35px;
+  text-align: right;
+  background-color: var(--tertiary-color);
+  justify-content: center;
+  align-items: center;
+}
+
+#footer p {
+  font-size: 1em;
+  color: var(--light-color);
+  padding: 5px;
+}
+
+/* Margin fix */
+@media(max-width: 1360px){
+  #projects .container {
+    margin: 0 20px;
+  }
+}
+
+/* Mobile Media Query */
+@media(max-width: 1000px){
+  #projects .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #projects {
+    height: 1850px
+  }
+  #contact .social a{
+    font-size: 0.75em;
+    padding:2.5px;
+  }
+  h1{
+    font-size: 3em;
+  }
+  h3{
+    font-size: 1.5em;
+  }
+}
